@@ -6,9 +6,7 @@ class Lesson1 {
     var max: Int = 0
     var gap: Int = 0
     var lastWasOne: Boolean = false
-    val binaryString = n.toBinaryString
-    println(binaryString)
-    binaryString.foreach {
+    n.toBinaryString.foreach {
       case '0' =>
         if (lastWasOne) {
           gap = 1

@@ -9,6 +9,9 @@ class Lesson1Spec extends FunSpec {
   val examples = Map(
     0 -> 0,
     1 -> 0,
+    2 -> 0,
+    3 -> 0,
+    5 -> 1,
     9 -> 2,
     529 -> 4,
     20 -> 1,
