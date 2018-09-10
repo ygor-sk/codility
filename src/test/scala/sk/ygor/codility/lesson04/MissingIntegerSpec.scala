@@ -11,6 +11,10 @@ class MissingIntegerSpec extends FunSpec {
     Array(1, 2, 3) -> 4,
     Array(-1, -3) -> 1,
     Array[Int]() -> 1,
+    Array(0) -> 1,
+    Array(1) -> 2,
+    Array(2) -> 1,
+    Array(3) -> 1,
   )
 
   describe("MissingInteger") {
@@ -25,6 +29,14 @@ class MissingIntegerSpec extends FunSpec {
     examples foreach {
       case (array, result) => it(s"should calculate $result as missing integer in array ${array.mkString(", ")}") {
         assert(missingInteger.solution2(array) === result)
+      }
+    }
+  }
+
+  describe("MissingInteger solution 3") {
+    examples foreach {
+      case (array, result) => it(s"should calculate $result as missing integer in array ${array.mkString(", ")}") {
+        assert(missingInteger.solution3Slowest(array) === result)
       }
     }
   }

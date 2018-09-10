@@ -33,4 +33,21 @@ class MissingInteger {
     }
     MAX_VALUE + 1
   }
+
+  def solution3Slowest(array: Array[Int]): Int = {
+    val sorted = array.filter(_ > 0).sorted
+    sorted match {
+      case Array() => 1
+      case Array(single) => if (single == 1) 2 else 1
+      case _ =>
+        sorted.iterator
+          .sliding(2)
+          .find {
+            case Seq(a, b) => b - a > 1
+          }
+          .map(seq => seq.head + 1)
+          .getOrElse(sorted.last + 1)
+
+    }
+  }
 }
