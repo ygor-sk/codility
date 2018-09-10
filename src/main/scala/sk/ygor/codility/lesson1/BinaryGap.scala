@@ -1,6 +1,6 @@
-package sk.ygor.codility
+package sk.ygor.codility.lesson1
 
-class Lesson1 {
+class BinaryGap {
 
   def solution(n: Int): Int = {
     var max: Int = 0

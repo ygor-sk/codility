@@ -1,10 +1,10 @@
-package sk.ygor.codility
+package sk.ygor.codility.lesson1
 
 import org.scalatest.FunSpec
 
-class Lesson1Spec extends FunSpec {
+class BinaryGapSpec extends FunSpec {
 
-  val lesson1 = new Lesson1
+  val binaryGap = new BinaryGap
 
   val examples = Map(
     0 -> 0,
@@ -18,18 +18,18 @@ class Lesson1Spec extends FunSpec {
     15 -> 0,
   )
 
-  describe("Lession 1 solution") {
+  describe("BinaryGap solution") {
     examples foreach {
       case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
-        assert(lesson1.solution(number) === result)
+        assert(binaryGap.solution(number) === result)
       }
     }
   }
 
-  describe("Lession 1 solution2") {
+  describe("BinaryGap solution2") {
     examples foreach {
       case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
-        assert(lesson1.solution2(number) === result)
+        assert(binaryGap.solution2(number) === result)
       }
     }
   }
