@@ -1,4 +1,4 @@
-package sk.ygor.codility.lesson2
+package sk.ygor.codility.lesson02
 
 class OddOccurrencesInArray {
 

@@ -1,4 +1,4 @@
-package sk.ygor.codility.lesson3
+package sk.ygor.codility.lesson03
 
 class TapeEquilibrium {
 

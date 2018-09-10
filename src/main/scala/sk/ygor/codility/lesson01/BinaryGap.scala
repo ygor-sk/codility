@@ -1,4 +1,4 @@
-package sk.ygor.codility.lesson1
+package sk.ygor.codility.lesson01
 
 class BinaryGap {
 
