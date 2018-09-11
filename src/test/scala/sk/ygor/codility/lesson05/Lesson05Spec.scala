@@ -57,5 +57,33 @@ class Lesson05Spec extends FunSpec {
     }
   }
 
+  describe("MinAvgTwoSlice") {
+
+    val solver = new MinAvgTwoSlice
+
+    val examples = Seq(
+      Array(4, 2, 2, 5, 1, 5, 8) -> 1,
+    )
+
+    describe("solution O(n^2)") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${array.mkString(", ")}") {
+            assert(solver.solution(array) === result)
+          }
+      }
+    }
+
+    describe("solution O(n)") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${array.mkString(", ")}") {
+            assert(solver.solution2(array) === result)
+          }
+      }
+    }
+
+  }
+
 
 }
