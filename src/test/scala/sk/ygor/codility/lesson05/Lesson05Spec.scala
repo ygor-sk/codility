@@ -41,7 +41,21 @@ class Lesson05Spec extends FunSpec {
         }
     }
   }
+  describe("GenomicRangeQuery") {
 
+    val solver = new GenomicRangeQuery
+
+    val examples = Seq(
+      ("CAGCCTA", Array(2, 5, 0), Array(4, 5, 6)) -> Array(2, 4, 1),
+    )
+
+    examples foreach {
+      case ((s, p, q), result) =>
+        it(s"should calculate correct result for s=$s, p=$p, q=$q") {
+          assert(solver.solution(s, p, q) === result)
+        }
+    }
+  }
 
 
 }
