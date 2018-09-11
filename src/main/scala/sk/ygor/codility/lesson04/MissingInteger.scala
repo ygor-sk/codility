@@ -42,10 +42,9 @@ class MissingInteger {
       case _ =>
         sorted.iterator
           .sliding(2)
-          .find {
-            case Seq(a, b) => b - a > 1
+          .collectFirst {
+            case Seq(a, b) if b - a > 1 => a + 1
           }
-          .map(seq => seq.head + 1)
           .getOrElse(sorted.last + 1)
 
     }
