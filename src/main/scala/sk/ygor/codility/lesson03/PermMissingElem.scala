@@ -10,6 +10,17 @@ class PermMissingElem {
     rangeXor ^ arrayXor
   }
 
+  def solution2(a: Array[Int]): Int = {
+    val missing = Array.fill(a.length + 1)(true)
+    a.foreach(item => missing(item - 1) = false)
+    for (i <- missing.indices) {
+      if (missing(i)) {
+        return i+1
+      }
+    }
+    sys.error("invalid input array")
+  }
+
   def solutionSlower(a: Array[Int]): Int = {
     val hashSet = HashSet() ++ a
     (1 to a.length + 1).find(i => !hashSet.contains(i)).get
@@ -19,8 +30,7 @@ class PermMissingElem {
     a.sorted
       .view
       .zipWithIndex
-      .find { case (item, index) => item != index + 1 }
-      .collect { case (_, index) => index + 1 }
+      .collectFirst { case (item, index) if item != index + 1 => index + 1 }
       .getOrElse(a.length + 1)
   }
 

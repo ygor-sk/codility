@@ -15,27 +15,39 @@ class PermMissingElemSpec extends FunSpec {
   )
 
   describe("PermMissingElem") {
-    examples foreach {
-      case (array, result) => it(s"should calculate $result as missing in ${array.mkString(", ")}") {
-        assert(permMissinElem.solution(array) === result)
-      }
-    }
-  }
 
-  describe("PermMissingElem slower") {
-    examples foreach {
-      case (array, result) => it(s"should calculate $result as missing in ${array.mkString(", ")}") {
-        assert(permMissinElem.solutionSlower(array) === result)
+    describe("solution") {
+      examples foreach {
+        case (array, result) => it(s"should calculate $result as missing in ${array.mkString(", ")}") {
+          assert(permMissinElem.solution(array) === result)
+        }
       }
     }
-  }
 
-  describe("PermMissingElem slowest") {
-    examples foreach {
-      case (array, result) => it(s"should calculate $result as missing in ${array.mkString(", ")}") {
-        assert(permMissinElem.solutionSlowest(array) === result)
+    describe("solution2") {
+      examples foreach {
+        case (array, result) => it(s"should calculate $result as missing in ${array.mkString(", ")}") {
+          assert(permMissinElem.solution2(array) === result)
+        }
       }
     }
+
+    describe("solutionSlower") {
+      examples foreach {
+        case (array, result) => it(s"should calculate $result as missing in ${array.mkString(", ")}") {
+          assert(permMissinElem.solutionSlower(array) === result)
+        }
+      }
+    }
+
+    describe("solutionSlowest") {
+      examples foreach {
+        case (array, result) => it(s"should calculate $result as missing in ${array.mkString(", ")}") {
+          assert(permMissinElem.solutionSlowest(array) === result)
+        }
+      }
+    }
+
   }
 
 }
