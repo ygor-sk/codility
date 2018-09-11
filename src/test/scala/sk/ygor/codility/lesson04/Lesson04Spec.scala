@@ -96,5 +96,34 @@ class Lesson04Spec extends FunSpec {
 
   }
 
+  describe("PermCheck") {
+
+    val solver = new PermCheck
+
+    val examples = Seq(
+      Array(1) -> 1,
+      Array(2) -> 0,
+      Array(1, 2) -> 1,
+      Array(2, 1) -> 1,
+      Array(1, 1) -> 0,
+      Array(1, 2, 1) -> 0,
+      Array(1, 1, 2) -> 0,
+      Array(10, 1, 2) -> 0,
+      Array(-1, 1, 2) -> 0,
+      Array(3, 1, 2) -> 1,
+      Array(4, 1, 1) -> 0,
+      Array(1, 3, 4, 2, 6, 5) -> 1,
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (array, result) => it(s"should calculate correct result for array=${array.mkString(", ")}") {
+          assert(solver.solution(array) === result)
+        }
+      }
+    }
+
+  }
+
 
 }
