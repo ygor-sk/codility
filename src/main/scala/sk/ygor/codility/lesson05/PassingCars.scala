@@ -7,9 +7,14 @@ class PassingCars {
     var zeroes = 0
     a.foreach {
       case 0 => zeroes += 1
-      case 1 => result += zeroes
+      case 1 => {
+        result += zeroes
+        if (result > 1000000000) {
+          return -1
+        }
+      }
     }
-    if (result > 1000000000) -1 else result
+    result
   }
 
 }
