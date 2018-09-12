@@ -9,21 +9,17 @@ class MinAvgTwoSlice {
     for (i <- a.indices) {
       prefixSums(i + 1) = prefixSums(i) + a(i)
     }
-    println(java.util.Arrays.toString(a))
-    println(java.util.Arrays.toString(prefixSums))
     var minimumAverage = (a(0) + a(1)) / 2.0
     var result: Int = 0
     for (i <- 0 until a.length - 1) {
       for (j <- i + 1 until a.length) {
         val average = (prefixSums(j + 1) - prefixSums(i)) / (j - i + 1.0)
-        println(i, j, average)
         if (average < minimumAverage) {
           minimumAverage = average
           result = i
         }
       }
     }
-    println((minimumAverage, result))
     result
   }
 
