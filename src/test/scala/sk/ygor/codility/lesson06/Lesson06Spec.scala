@@ -82,5 +82,24 @@ class Lesson06Spec extends FunSpec {
 
   }
 
+  describe("NumberOfDiscIntersections") {
+
+    val solver = new NumberOfDiscIntersections
+
+    val examples = Seq(
+      Array(1, 5, 2, 1, 4, 0) -> 11,
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array: ${if (array.length > 100) "[too long]" else array.mkString(", ")}") {
+            assert(solver.solution(array) === result)
+          }
+      }
+    }
+
+  }
+
 
 }
