@@ -23,6 +23,7 @@ class Lesson06Spec extends FunSpec {
         }
     }
   }
+
   describe("MaxProductOfThree") {
 
     val solver = new MaxProductOfThree
@@ -50,6 +51,31 @@ class Lesson06Spec extends FunSpec {
         case (array, result) =>
           it(s"should calculate correct result for array: ${if (array.length > 100) "[too long]" else array.mkString(", ")}") {
             assert(solver.solution2(array) === result)
+          }
+      }
+    }
+
+  }
+  describe("Triangle") {
+
+    val solver = new Triangle
+
+    val examples = Seq(
+      Array(10, 2, 5, 1, 8, 20) -> 1,
+      Array(10, 50, 5, 1) -> 0,
+      Array(1, 2, 3) -> 0,
+      Array(42, 42, 42) -> 1,
+      Array(Int.MaxValue, Int.MaxValue, Int.MaxValue) -> 1,
+      Array(1, 2, 3, 4, 5, 6, 7) -> 1,
+      Array(-1, -2, -3, -4, -5, -6, -7) -> 0,
+      Array.fill(100000)(42) -> 1
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array: ${if (array.length > 100) "[too long]" else array.mkString(", ")}") {
+            assert(solver.solution(array) === result)
           }
       }
     }
