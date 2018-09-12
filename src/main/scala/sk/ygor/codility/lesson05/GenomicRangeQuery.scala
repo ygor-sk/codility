@@ -16,7 +16,7 @@ class GenomicRangeQuery {
           LETTERS(s(pi))
         } else {
           val pCount = prefixOccurences(pi)
-          val qCount = prefixOccurences(qi)
+          val qCount = prefixOccurences(qi + 1)
           val sliceOccurences = LETTERS.keys.map(letter => letter -> (qCount(letter) - pCount(letter)))
           sliceOccurences.collectFirst {
             case (letter, occurences) if occurences > 0 => LETTERS(letter)
