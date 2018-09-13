@@ -28,7 +28,6 @@ class PermMissingElem {
 
   def solutionSlowest(a: Array[Int]): Int = {
     a.sorted
-      .view
       .zipWithIndex
       .collectFirst { case (item, index) if item != index + 1 => index + 1 }
       .getOrElse(a.length + 1)
