@@ -1,8 +1,9 @@
 package sk.ygor.codility.lesson07
 
 import org.scalatest.FunSpec
+import sk.ygor.codility.TestUtils
 
-class Lesson07Spec extends FunSpec {
+class Lesson07Spec extends FunSpec with TestUtils {
 
   describe("Nesting") {
 
@@ -47,12 +48,13 @@ class Lesson07Spec extends FunSpec {
       (Array(1, 2, 3, 4, 5), Array(1, 1, 1, 1, 0), 1),
       (Array(1, 2, 3, 4, 5), Array(1, 1, 1, 1, 1), 5),
       (Array(4, 3, 2, 1, 5), Array(0, 1, 0, 0, 0), 2),
+      ((1 to 1000000).toArray, Array.fill(1000000)(0), 1000000),
     )
 
     describe("solution") {
       examples foreach {
         case (sizes, directions, result) =>
-          it(s"should calculate correct result for sizes: ${sizes.mkString(", ")} and directions ${directions.mkString(", ")}") {
+          it(s"should calculate correct result for sizes: ${formatArray(sizes)} and directions ${formatArray(directions)}") {
             assert(solver.solution(sizes, directions) === result)
           }
       }

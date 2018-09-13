@@ -9,7 +9,7 @@ class Fish {
   def solution(a: Array[Int], b: Array[Int]): Int = {
     assert(a.length == b.length)
 
-    val stack = mutable.Stack[Fisssh]()
+    val stack = mutable.ArrayStack[Fisssh]()
 
     def reduceStack(): Unit = {
       while (stack.size > 1) {
@@ -19,7 +19,8 @@ class Fish {
           val winner = if (leftFish.size > rightFish.size) leftFish else rightFish
           stack.push(winner)
         } else {
-          stack.push(leftFish, rightFish)
+          stack.push(leftFish)
+          stack.push(rightFish)
           return
         }
       }
