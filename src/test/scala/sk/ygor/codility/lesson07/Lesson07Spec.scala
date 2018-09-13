@@ -62,4 +62,33 @@ class Lesson07Spec extends FunSpec with TestUtils {
 
   }
 
+  describe("Brackets") {
+
+    val solver = new Brackets
+
+    val examples = Seq(
+      ("", 1),
+      ("(", 0),
+      (")", 0),
+      (")(", 0),
+      ("((", 0),
+      ("()()()()", 1),
+      ("(())", 1),
+      ("{{}}", 1),
+      ("{{()}}", 1),
+      ("{[()()]}", 1),
+      ("([)()]", 0),
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (string, result) =>
+          it(s"should calculate correct result for sizes: ${formatString(string)}") {
+            assert(solver.solution(string) === result)
+          }
+      }
+    }
+
+  }
+
 }
