@@ -83,6 +83,15 @@ class Lesson05Spec extends FunSpec {
       }
     }
 
+    describe("solution3 O(n)") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${array.mkString(", ")}") {
+            assert(solver.solution3(array) === result)
+          }
+      }
+    }
+
   }
 
 
