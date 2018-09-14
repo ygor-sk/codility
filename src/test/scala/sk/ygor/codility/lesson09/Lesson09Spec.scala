@@ -74,10 +74,10 @@ class Lesson09Spec extends FunSpec with TestUtils {
 
     val examples = Seq(
       Array(3, 2, 6, -1, 4, 5, -1, 2) -> 17,
-      Array(1, 2, 3) -> 5,
+      Array(1, 2, 3) -> 2,
       Array(2, 5, 10, 1, 21) -> (5 + 10 + 1),
       Array(2, -5, 10, 1, 21) -> (10 + 1),
-      Array(5464565, -5, 10, -2, -5, 100, 999999) -> 100,
+      Array(5464565, -50, 10, -2, -5, 100, 999999) -> 110,
     )
 
     describe("solution") {
