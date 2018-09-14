@@ -68,4 +68,27 @@ class Lesson09Spec extends FunSpec with TestUtils {
 
   }
 
+  describe("MaxDoubleSliceSum") {
+
+    val solver = new MaxDoubleSliceSum
+
+    val examples = Seq(
+      Array(3, 2, 6, -1, 4, 5, -1, 2) -> 17,
+      Array(1, 2, 3) -> 5,
+      Array(2, 5, 10, 1, 21) -> (5 + 10 + 1),
+      Array(2, -5, 10, 1, 21) -> (10 + 1),
+      Array(5464565, -5, 10, -2, -5, 100, 999999) -> 100,
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array: ${formatArray(array)}") {
+            assert(solver.solution(array) === result)
+          }
+      }
+    }
+
+  }
+
 }
