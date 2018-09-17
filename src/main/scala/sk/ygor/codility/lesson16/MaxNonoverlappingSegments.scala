@@ -1,5 +1,4 @@
-package sk.ygor.codility.lesson15
-
+package sk.ygor.codility.lesson16
 
 class MaxNonoverlappingSegments {
 
