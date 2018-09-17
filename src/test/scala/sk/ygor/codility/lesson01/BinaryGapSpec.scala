@@ -4,8 +4,6 @@ import org.scalatest.FunSpec
 
 class BinaryGapSpec extends FunSpec {
 
-  val binaryGap = new BinaryGap
-
   val examples = Map(
     0 -> 0,
     1 -> 0,
@@ -18,18 +16,36 @@ class BinaryGapSpec extends FunSpec {
     15 -> 0,
   )
 
-  describe("BinaryGap solution") {
-    examples foreach {
-      case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
-        assert(binaryGap.solution(number) === result)
+  describe("Scala") {
+
+    val binaryGap = new BinaryGap
+
+    describe("BinaryGap solution") {
+      examples foreach {
+        case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
+          assert(binaryGap.solution(number) === result)
+        }
       }
     }
+
+    describe("BinaryGap solution2") {
+      examples foreach {
+        case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
+          assert(binaryGap.solution2(number) === result)
+        }
+      }
+    }
+
   }
 
-  describe("BinaryGap solution2") {
-    examples foreach {
-      case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
-        assert(binaryGap.solution2(number) === result)
+  describe("Java") {
+    val binaryGap = new BinaryGapJava
+
+    describe("BinaryGap solution") {
+      examples foreach {
+        case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
+          assert(binaryGap.solution(number) === result)
+        }
       }
     }
   }
