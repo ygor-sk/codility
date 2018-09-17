@@ -27,9 +27,40 @@ class Lesson15Spec extends FunSpec with TestUtils {
     describe("solution") {
       examples foreach {
         case (array, result) =>
-          assert(array.sorted sameElements array)
           it(s"should calculate correct result for array=${formatArray(array)}") {
+            assert(array.sorted sameElements array)
             assert(solver.solution(array) === result)
+          }
+      }
+    }
+  }
+
+  describe("CountDistinctSlices") {
+
+    val solver = new CountDistinctSlices
+
+    val examples = Seq(
+      Array(1) -> 1,
+      Array(1, 2) -> 3,
+      Array(1, 2, 3) -> 6,
+      Array(1, 2, 3, 3) -> 7,
+      Array(3, 4, 5, 5, 2) -> 9,
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${formatArray(array)}") {
+            assert(solver.solution(0, array) === result)
+          }
+      }
+    }
+
+    describe("solution2") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${formatArray(array)}") {
+            assert(solver.solution2(0, array) === result)
           }
       }
     }
