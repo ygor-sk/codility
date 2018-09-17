@@ -11,4 +11,12 @@ class CyclicRotation {
     }
   }
 
+  def solution2(a: Array[Int], k: Int): Array[Int] = {
+    val result = Array.ofDim[Int](a.length)
+    for (i <- a.indices) {
+      result((i + k) % a.length) = a(i)
+    }
+    result
+  }
+
 }

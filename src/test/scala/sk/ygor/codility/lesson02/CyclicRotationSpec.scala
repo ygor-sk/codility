@@ -26,4 +26,12 @@ class CyclicRotationSpec extends FunSpec {
     }
   }
 
+  describe("CyclicRotation solution2") {
+    examples foreach {
+      case ((array, k), result) => it(s"should rotate array ${array.mkString(", ")} $k-times to array ${result.mkString(", ")}") {
+        assert(cyclicRotation.solution2(array, k) === result)
+      }
+    }
+  }
+
 }
