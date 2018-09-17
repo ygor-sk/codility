@@ -66,5 +66,49 @@ class Lesson15Spec extends FunSpec with TestUtils {
     }
   }
 
+  describe("CountTriangles") {
+
+    val solver = new CountTriangles
+
+    val examples = Seq(
+      Array.empty[Int] -> 0,
+      Array(5) -> 0,
+      Array(5, 6) -> 0,
+      Array(5, 6, 7) -> 1,
+      Array(1, 1, 1) -> 1,
+      Array(1, 2, 3) -> 0,
+      Array(10, 2, 5, 1, 8, 12) -> 4,
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${formatArray(array)}") {
+            assert(solver.solution(array) === result)
+          }
+      }
+    }
+
+    describe("solution2") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${formatArray(array)}") {
+            assert(solver.solution2(array) === result)
+          }
+      }
+    }
+
+    describe("solution3") {
+      examples foreach {
+        case (array, result) =>
+          it(s"should calculate correct result for array=${formatArray(array)}") {
+            assert(solver.solution3(array) === result)
+          }
+      }
+    }
+
+
+  }
+
 
 }
