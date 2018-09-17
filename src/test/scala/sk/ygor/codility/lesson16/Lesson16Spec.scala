@@ -30,5 +30,31 @@ class Lesson16Spec extends FunSpec with TestUtils {
 
   }
 
+  describe("TieRopes") {
+
+    val solver = new TieRopes
+
+    val examples = Seq(
+      (1, Array(5)) -> 1,
+      (2, Array(5)) -> 1,
+      (5, Array(5)) -> 1,
+      (6, Array(5)) -> 0,
+      (6, Array(10, 20)) -> 2,
+      (10, Array(10, 20)) -> 2,
+      (11, Array(10, 20)) -> 1,
+      (4, Array(1, 2, 3, 4, 1, 1, 3)) -> 3,
+    )
+
+    describe("solution") {
+      examples foreach {
+        case ((k, a), result) =>
+          it(s"should calculate correct result for k=$k, a=${formatArray(a)}") {
+            assert(solver.solution(k, a) === result)
+          }
+      }
+    }
+
+  }
+
 
 }
