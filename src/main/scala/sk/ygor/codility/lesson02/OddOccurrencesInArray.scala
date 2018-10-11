@@ -15,4 +15,12 @@ class OddOccurrencesInArray {
       case _ => throw new RuntimeException(s"multiple results: ${unpaired.mkString(", ")}")
     }
   }
+
+  def solution2(a: Array[Int]): Int = {
+    var result = 0
+    for (i <- a.indices) {
+      result = result ^ a(i)
+    }
+    result
+  }
 }

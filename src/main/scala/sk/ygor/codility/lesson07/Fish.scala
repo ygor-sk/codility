@@ -12,7 +12,7 @@ class Fish {
     val stack = mutable.ArrayStack[Fisssh]()
 
     def reduceStack(): Unit = {
-      while (stack.size > 1) {
+      while (stack.size > 1) { // 2 or more fish
         val rightFish = stack.pop()
         val leftFish = stack.pop()
         if (leftFish.direction == 1 && rightFish.direction == 0) {

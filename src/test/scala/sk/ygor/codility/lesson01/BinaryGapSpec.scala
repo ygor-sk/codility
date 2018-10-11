@@ -36,6 +36,14 @@ class BinaryGapSpec extends FunSpec {
       }
     }
 
+    describe("BinaryGap solution3") {
+      examples foreach {
+        case (number, result) => it(s"should calculate, that number $number has longest binary gap of size $result") {
+          assert(binaryGap.solution3(number) === result)
+        }
+      }
+    }
+
   }
 
   describe("Java") {

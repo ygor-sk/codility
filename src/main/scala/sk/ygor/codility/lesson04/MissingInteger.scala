@@ -7,18 +7,20 @@ class MissingInteger {
   /*
     It is guaranteed, that 1 <= result <= MAX_VALUE
    */
-  final val MAX_VALUE = 100000
+  final val MAX_VALUE = 1000000
 
   def solution(a: Array[Int]): Int = {
     val seen = Array.ofDim[Boolean](MAX_VALUE)
-    a.foreach(x => {
-      if (x > 0 && x <= MAX_VALUE) {
-        seen(x - 1) = true
+    for (i <- a.indices) {
+      val element = a(i)
+      if (element > 0) {
+        seen(element - 1) = true
       }
-    })
-    for (x <- 1 to MAX_VALUE) {
-      if (!seen(x - 1)) {
-        return x
+    }
+
+    for (x <- seen.indices) {
+      if (!seen(x)) {
+        return x + 1
       }
     }
     MAX_VALUE + 1

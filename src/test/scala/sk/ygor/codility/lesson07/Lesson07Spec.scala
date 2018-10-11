@@ -91,4 +91,23 @@ class Lesson07Spec extends FunSpec with TestUtils {
 
   }
 
+  describe("StoneWall") {
+
+    val solver = new StoneWall
+
+    val examples = Seq(
+      (Array(8, 8, 5, 7, 9, 8, 7, 4, 8), 7),
+    )
+
+    describe("solution") {
+      examples foreach {
+        case (string, result) =>
+          it(s"should calculate correct result for sizes: ${formatArray(string)}") {
+            assert(solver.solution(string) === result)
+          }
+      }
+    }
+
+  }
+
 }

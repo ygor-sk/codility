@@ -44,4 +44,18 @@ class BinaryGap {
       0
   }
 
+  def solution3(n: Int): Int = {
+    var max: Int = 0
+    var currentMax = -1
+    n.toBinaryString.foreach {
+      case '0' => if (currentMax != -1) {
+        currentMax += 1
+      }
+      case '1' =>
+        max = Math.max(max, currentMax)
+        currentMax = 0
+    }
+    if (max == -1) 0 else max
+  }
+
 }

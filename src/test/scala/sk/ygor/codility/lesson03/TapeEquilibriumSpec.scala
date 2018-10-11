@@ -9,6 +9,7 @@ class TapeEquilibriumSpec extends FunSpec {
   val examples = Seq(
     Array(3, 1, 2, 4, 3) -> 1,
     Array(1, 15) -> 14,
+    Array(0, 5, -5) -> 0,
     Array(1, 19, 15) -> 5,
   )
 

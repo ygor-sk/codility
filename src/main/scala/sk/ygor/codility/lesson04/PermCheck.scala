@@ -19,4 +19,25 @@ class PermCheck {
     0
   }
 
+  def solution2(a: Array[Int]): Int = {
+    val seen = Array.fill(a.length)(false)
+    var remaining = a.length
+    for (i <- a.indices) {
+      val number = a(i) - 1
+      if (number < 0 || number >= seen.length || seen(number)) {
+        return 0
+      } else {
+        seen(number) = true
+        remaining -= 1
+      }
+    }
+    if (remaining == 0) {
+      1
+    } else {
+      0
+    }
+
+  }
+
+
 }

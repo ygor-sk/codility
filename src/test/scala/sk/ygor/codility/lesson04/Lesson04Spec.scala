@@ -21,7 +21,6 @@ class Lesson04Spec extends FunSpec {
     }
   }
 
-
   describe("MissingInteger") {
 
     val missingInteger = new MissingInteger
@@ -119,6 +118,14 @@ class Lesson04Spec extends FunSpec {
       examples foreach {
         case (array, result) => it(s"should calculate correct result for array=${array.mkString(", ")}") {
           assert(solver.solution(array) === result)
+        }
+      }
+    }
+
+    describe("solution2") {
+      examples foreach {
+        case (array, result) => it(s"should calculate correct result for array=${array.mkString(", ")}") {
+          assert(solver.solution2(array) === result)
         }
       }
     }

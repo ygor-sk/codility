@@ -35,6 +35,18 @@ class OddOccurrencesInArraySpec extends FunSpec with Matchers {
 
       }
     }
+
+    describe("OddOccurrencesInArray solution2") {
+      examples foreach {
+        case (array, Left(message)) =>
+          // not testing this
+        case (array, Right(result)) =>
+          it(s"should calculate result $result for array ${array.mkString(", ")}") {
+            assert(occurrencesInArray.solution2(array) === result)
+          }
+
+      }
+    }
   }
 
   describe("Java") {
